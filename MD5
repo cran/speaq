@@ -1,6 +1,6 @@
-7af132282a1fe983268abb87c279e394 *DESCRIPTION
+b8bd8000ab150e4c94f23b2e141f90d3 *DESCRIPTION
 aead6ccae5b854e1515d13730059f6b4 *NAMESPACE
-d41d8cd98f00b204e9800998ecf8427e *NEWS
+e5ceb0d919576b4a2305bddd14689837 *NEWS
 b5cee9aaf2c66f50aad8c0501e25660d *R/BWR.R
 326d642b765ab47398c071bfb143854f *R/createNullSampling.R
 7c12bc5c94af91ea4314cc9d4f8a0456 *R/detectSpecPeaks.R
@@ -33,5 +33,5 @@ f6edf9757dc3f488b05b735b61f43578 *man/drawSpec.Rd
 89d0ee4efc4b0d14a7995ce96e7a7ce8 *man/hClustAlign.Rd
 b13924427de58990291b525a9ad4dca3 *man/makeSimulatedData.Rd
 46cd9b3f87bd17da5ed5500dfe14859c *man/returnLocalMaxima.Rd
-9e65564168647eae4ff57013a489d215 *man/speaq-package.Rd
+afcb797babd028a9e6e41689334272e6 *man/speaq-package.Rd
 a9b02a5f4326c900aca2536cd9dca3bc *vignettes/speaq.Rnw
