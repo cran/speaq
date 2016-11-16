@@ -1,12 +1,12 @@
-b8bd8000ab150e4c94f23b2e141f90d3 *DESCRIPTION
-aead6ccae5b854e1515d13730059f6b4 *NAMESPACE
-e5ceb0d919576b4a2305bddd14689837 *NEWS
+cc3a2c580bb18e9a3c2a08d46d9b2a5f *DESCRIPTION
+ce1950ae1ee972b0b3db068052cb4cd6 *NAMESPACE
+b0fa4bf254c9c1be5d3dd6d8dbcbda0b *NEWS
 b5cee9aaf2c66f50aad8c0501e25660d *R/BWR.R
 326d642b765ab47398c071bfb143854f *R/createNullSampling.R
 7c12bc5c94af91ea4314cc9d4f8a0456 *R/detectSpecPeaks.R
 c3e9241b98bac6c84dba78a285258fba *R/doShift.R
 a4f0757885bc95d9ed910369001128dd *R/dohCluster.R
-7e518ff160ccb3e26b66e54a53cb2db3 *R/dohClusterCustommedSegments.R
+0420eace401f52b00ab551d5f13db26f *R/dohClusterCustommedSegments.R
 1d0ac0a3f2f74c0409e4f20bc55649cd *R/drawBW.R
 dd54e61ec1a89dcca9d353e7f4566914 *R/drawSpec.R
 50bbc465aa8de6b1d44f29063cb73f57 *R/findRef.R
@@ -15,7 +15,7 @@ dd54e61ec1a89dcca9d353e7f4566914 *R/drawSpec.R
 5c7b75ab07da92f79e25547bacf9f017 *R/hClustAlign.R
 1e7252c532a7a71c74b148fa781fe4b3 *R/makeSimulatedData.R
 f9e1cb588bbee216b0d5c7112ef0055c *R/returnLocalMaxima.R
-a562c49126b15c53a3fbff8710bbce7f *build/vignette.rds
+1b31fad373fd572e863afaad8a754940 *build/vignette.rds
 ba2513e4e379cde97ca60733a9687b20 *inst/doc/speaq.R
 a9b02a5f4326c900aca2536cd9dca3bc *inst/doc/speaq.Rnw
 c6f5622dd776f80e7c50157707dc02e9 *inst/doc/speaq.pdf
@@ -33,5 +33,5 @@ f6edf9757dc3f488b05b735b61f43578 *man/drawSpec.Rd
 89d0ee4efc4b0d14a7995ce96e7a7ce8 *man/hClustAlign.Rd
 b13924427de58990291b525a9ad4dca3 *man/makeSimulatedData.Rd
 46cd9b3f87bd17da5ed5500dfe14859c *man/returnLocalMaxima.Rd
-afcb797babd028a9e6e41689334272e6 *man/speaq-package.Rd
+b6bf1879155bfa92bdf49a7935e9b7cc *man/speaq-package.Rd
 a9b02a5f4326c900aca2536cd9dca3bc *vignettes/speaq.Rnw
