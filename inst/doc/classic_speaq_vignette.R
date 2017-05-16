@@ -1,3 +1,9 @@
+## ----setup, include=FALSE------------------------------------------------
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(tidy = TRUE)
+figwidth.out <- 600
+DPI.out <- 140
+
 ## ----Read_data_input,fig.keep='none', tidy=FALSE, message=F, warning=F----
 library(speaq)
 #Generate a simulated NMR data set for this experiment
@@ -5,7 +11,7 @@ res=makeSimulatedData();
 X=res$data;
 groupLabel=res$label;
 
-## ----Unaligned_spectral_plots--------------------------------------------
+## ----Unaligned_spectral_plots, dpi=DPI.out, fig.width=6, fig.height=5, out.width = figwidth.out----
 drawSpec(X);
 
 ## ----Peak_detection------------------------------------------------------
@@ -37,7 +43,6 @@ for (i in 1:length(resFindRef$orderSpec))
     
 cat("\n The reference is: ", refInd);
 
-
 ## ----Spectral_alignment--------------------------------------------------
 # Set maxShift
 maxShift = 50;
@@ -49,13 +54,21 @@ Y <- dohCluster(X,
                 acceptLostPeak = TRUE, verbose=FALSE);
 
 
-## ----Spectral_alignment_optimal_maxShift,fig.align='center'--------------
+## ----Spectral_alignment_optimal_maxShift,fig.align='center', dpi=DPI.out, fig.width=6, fig.height=5, out.width = figwidth.out----
 Y <- dohCluster(X,
                 peakList = peakList,
                 refInd = refInd,
                 maxShift  = NULL,
                 acceptLostPeak = TRUE, verbose=TRUE);
 
+
+## ----table, echo=FALSE---------------------------------------------------
+library(knitr)
+
+nghiaTable = matrix(c(c(100, 200, 0, 0, 0),c(450, 680, 1, 0, 50)), nrow = 2, byrow = T)
+colnames(nghiaTable) = c("begin" , "end" , "forAlign" , "ref" , "maxShift")
+
+kable(nghiaTable)
 
 ## ----Spectral_segment_alignment------------------------------------------
 segmentInfoMat=matrix(data=c(100,200,0,0,0,
@@ -72,20 +85,20 @@ Yc <- dohClusterCustommedSegments(X,
                                  verbose=FALSE)
                                  
 
-## ----Aligned_spectral_plots----------------------------------------------
+## ----AlignedSpectral_plots, dpi=DPI.out, fig.width=6, fig.height=5, out.width = figwidth.out----
 drawSpec(Y);
 
-## ----Aligned_spectral_plots_limited_height-------------------------------
+## ----AlignedSpectral_plots_limited_height, dpi=DPI.out, fig.width=6, fig.height=5, out.width = figwidth.out----
 drawSpec(Y,
         startP=450,
         endP=680,
         highBound = 5e+5,
         lowBound = -100);
 
-## ----Aligned_spectral_plots_customized-----------------------------------
+## ----Aligned_spectral_plots_customized, dpi=DPI.out, fig.width=6, fig.height=5, out.width = figwidth.out----
 drawSpec(Yc);
 
-## ----Quantitative_analysisE----------------------------------------------
+## ----Quantitative_analysis-----------------------------------------------
 N = 100;
 alpha = 0.05;
 
@@ -102,9 +115,13 @@ for (i in 1 : length(perc)){
     perc[i] = quantile(H0[,i],1-alpha_corr, type = 3);
 }
 
-## ----drawBW_1------------------------------------------------------------
+## ----drawBW_1, dpi=DPI.out, fig.width=7, fig.height=7, out.width = figwidth.out----
+
 drawBW(BW, perc,Y, groupLabel = groupLabel)
 
-## ----drawBW_2------------------------------------------------------------
+
+## ----drawBW_2, dpi=DPI.out, fig.width=7, fig.height=7, out.width = figwidth.out----
+
 drawBW(BW, perc, Y ,startP=450, endP=680, groupLabel = groupLabel)
+
 
