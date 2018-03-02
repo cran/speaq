@@ -3,7 +3,7 @@
 #' This function converts phase corrected NMR spectra to peak data by using wavelet based peak detection (with the MassSpecWavelet package)
 #'
 #' @param X.ppm The x/ppm values of the spectra (in single vector or matrix format).
-#' @param Y.spec The spectra in matrix format.
+#' @param Y.spec The spectra in matrix format (rows = samples, columns = measurement points ).
 #' @param sample.labels The sample labels (numeric), if not supplied these will simply be the sample numbers.
 #' @param window.width The width of the detection window for the wavelets. Because of the Fourier transform lengths of 512 ( window.width = 'small') of 1024 ( window.width = 'large') are preferable.
 #' @param window.split A positive, even and whole number indicating in how many parts the sliding window is split up. With every iteration the window slides one part further.
@@ -12,6 +12,7 @@
 #' @param SNR.Th The Signal-to-noise threshold, see \link[MassSpecWavelet]{peakDetectionCWT}.
 #' @param nCPU The amount of cpu's to be used for peak detection. If set to '-1' all available cores minus 1 will be used.
 #' @param include_nearbyPeaks If set to TRUE small peaks in the tails of larger ones will be included in the peak data, see \link[MassSpecWavelet]{peakDetectionCWT}.
+#' @param raw_peakheight (default = FALSE) Whether to use the raw peak height of a peak instead of the optimal CWT coefficient (which is a measure for AUC).
 #'
 #' @return The peaks detected with the wavelets.
 #' 
@@ -24,7 +25,7 @@
 #'
 #' test.peaks <- getWaveletPeaks(Y.spec=subset.spectra, 
 #'                               X.ppm=subset.ppm ,
-#'                               nCPU = 2) # nCPU set to 2 for the vignette build
+#'                               nCPU = 1) # nCPU set to 2 for the vignette build
 #'
 #' @export
 #' 
@@ -38,7 +39,8 @@
 #' 
 #' 
 getWaveletPeaks <- function(Y.spec, X.ppm, sample.labels = NULL, window.width = "small", window.split = 4, 
-                            scales = seq(1, 16, 1), baselineThresh = 1000, SNR.Th = -1, nCPU = -1, include_nearbyPeaks = TRUE) {
+                            scales = seq(1, 16, 1), baselineThresh = 1000, SNR.Th = -1, nCPU = -1, include_nearbyPeaks = TRUE,
+                            raw_peakheight = FALSE) {
     # require(data.table) require(MassSpecWavelet) require(parallel) require(foreach)
     
     # error checks and miscellaneous parameter fixing
@@ -199,7 +201,7 @@ getWaveletPeaks <- function(Y.spec, X.ppm, sample.labels = NULL, window.width = 
                     oldWarningLevel <- getOption("warn")
                     options(warn = -1)
                     
-                    if (Wavelet.Peaks[1] != -1) {
+                    if (head(Wavelet.Peaks, n = 1)[1] != -1) {
                         teller <- teller + 1
                         WavPeaks[[teller]] <- Wavelet.Peaks
                     }
@@ -310,6 +312,10 @@ getWaveletPeaks <- function(Y.spec, X.ppm, sample.labels = NULL, window.width = 
         
         WaveletPeaks <- WaveletPeaks[!is.na(WaveletPeaks$peakIndex), ,drop=FALSE]
         WaveletPeaks <- data.frame(WaveletPeaks)
+        
+        if(raw_peakheight){
+            WaveletPeaks$peakValue = Y.spec[as.matrix(WaveletPeaks[,c("Sample", "peakIndex")])]
+        }
         
     } else{
         print("No peaks detected")

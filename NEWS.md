@@ -1,3 +1,15 @@
+# speaq 2.2:
+### 01/03/2018
+
+
+* changed the relevant.feature.p function to include multiple responses
+* typo fixes
+* vignette updates (now with performance analysis for a simulated dataset)
+* peak picker supports raw peak height from now on
+* fixed a "lostpeak" bug in dohClusterCustommedSegments(). Thanks to Manolis Matzapetakis for the alert.
+
+
+
 # speaq 2.1:
 ### 14/09/2017
 

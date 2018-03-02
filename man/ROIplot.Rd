@@ -13,7 +13,7 @@ ROIplot(Y.spec, X.ppm, ungrouped.peaks, grouped.peaks, ROI = NULL,
 
 \item{X.ppm}{(required) The vector with the ppm values}
 
-\item{ungrouped.peaks}{(required) The data resulting from peak detecion with wavelets}
+\item{ungrouped.peaks}{(required) The data resulting from peak detection with wavelets}
 
 \item{grouped.peaks}{(required) The data after grouping (with PeakGrouper)}
 
@@ -49,7 +49,7 @@ test.grouped <- PeakGrouper(Y.peaks = test.peaks)
 ROI.ppm <- 4.9
 roiWidth.ppm <- 0.15
 
-plots <- ROIplot(Y.spec = subset.spectra, 
+plots <- ROIplot(Y.spec = subset.spectra,
                  X.ppm =subset.ppm, 
                  ungrouped.peaks = test.peaks,
                  grouped.peaks = test.grouped ,
