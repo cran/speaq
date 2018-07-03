@@ -1,6 +1,6 @@
 Package: speaq
-Version: 2.3.1
-Date: 2018-03-27
+Version: 2.3.3
+Date: 2018-07-03
 Title: Tools for Nuclear Magnetic Resonance (NMR) Spectra Alignment,
         Peak Based Processing, Quantitative Analysis and Visualizations
 Author: Charlie Beirnaert, Trung Nghia Vu, Pieter Meysman, Kris Laukens and Dirk Valkenborg
@@ -16,6 +16,6 @@ VignetteBuilder: knitr
 License: Apache License 2.0
 RoxygenNote: 6.0.1
 NeedsCompilation: no
-Packaged: 2018-03-27 13:20:41 UTC; Charlie
+Packaged: 2018-07-03 08:40:33 UTC; Charlie
 Repository: CRAN
-Date/Publication: 2018-03-27 21:02:49 UTC
+Date/Publication: 2018-07-03 17:30:03 UTC

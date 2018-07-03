@@ -1,6 +1,6 @@
-7f75819a0c8121029f184b76559840a1 *DESCRIPTION
+5739aa9f88f253ee9dbe38ef35976346 *DESCRIPTION
 e1043592ed4b6c3da954cb607d99fa5b *NAMESPACE
-fa07da0c1f188ecbbc182419ca17b634 *NEWS.md
+9b4bf4bb7c94e67b6fbf7e09a7b5e87e *NEWS.md
 63b06083e907a20638dfc4ddd3a4d649 *R/AddPlottingStuff.R
 ca8ad01a0583c7dfcdb1857662da783a *R/BWR.R
 cc06dea1508fb4386848b909bf9cd857 *R/BuildFeatureMatrix.R
@@ -14,7 +14,7 @@ ec4f6d5af40276a4ba0b93b3d5934cf8 *R/ROIplot.R
 41d36d785053d7a08028412e329823ea *R/SilhouetR.R
 9f5ebc6033530d266bc6bcbaa7461a06 *R/Winedata.R
 ce03bad2cd58e2efcbdb2ad94ccddea7 *R/createNullSampling.R
-32af56d2c138c6138db857949eefa365 *R/detectSpecPeaks.R
+a51a4bbc53ebfcfdf88b82c45801703b *R/detectSpecPeaks.R
 227fc016b7ad8b61374d8ae73e6b37ed *R/doShift.R
 210d311b9a8d67e87df6e4c1b68994d1 *R/dohCluster.R
 a40906c2ec95b3d61e69078e9b79d5cd *R/dohClusterCustommedSegments.R
@@ -24,7 +24,7 @@ ee92b02f962da197c280dffa620c8795 *R/drawBW.R
 150c5d810627a7a83a74c4113397c0e8 *R/findRef.R
 824e08162d4f79dfc1a63a3b053e1a7f *R/findSegPeakList.R
 4cc10c125bb0b99cb556bb8a06e9af97 *R/findShiftStepFFT.R
-5cfc152422ce06d1d8776663da5f28f3 *R/getWaveletPeaks.R
+e221dc4634e6adde784c32bb9c50d2ea *R/getWaveletPeaks.R
 ce7769c21aac789f38eb7a9be38b13e8 *R/hClustAlign.R
 25ae926287efe2a084ecf91fd871c777 *R/hclust.grouping.R
 3f9ebb92dfb4f792620105fbcf994ec9 *R/makeSimulatedData.R
@@ -36,10 +36,10 @@ bf5668dab40a4b612c11cff2e23021bc *data/Winedata.rda
 1787f0f5375847e9d64ad4303eea41cd *data/datalist
 2c010177e7dcd7d86492d050f1027f74 *inst/doc/classic_speaq_vignette.R
 c72f871c4a86dbbb518d7249ebc2d778 *inst/doc/classic_speaq_vignette.Rmd
-836efc83f999a0125accdea49dff67cd *inst/doc/classic_speaq_vignette.html
+d001ed4cb4caeffbfa507293431bcfdb *inst/doc/classic_speaq_vignette.html
 9f9cfae02cd1c9c0a0b4e26be6ec821c *inst/doc/speaq2_illustrations.R
 cc657c417058ed0ba344b4225f35201f *inst/doc/speaq2_illustrations.Rmd
-3dab77c18ae57df913506c37063c9443 *inst/doc/speaq2_illustrations.html
+d86c2e10de0852c692538cc4ae4874db *inst/doc/speaq2_illustrations.html
 a782f3054e57112916e50315e971848b *man/AddPlottingStuff.Rd
 6bad064370aeac6e21dbc3e9ce1d511d *man/BWR.Rd
 394ff62573de05a30c72cdf78515a048 *man/BuildFeatureMatrix.Rd
