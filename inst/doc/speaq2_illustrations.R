@@ -2,8 +2,8 @@
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(tidy = FALSE)
 figwidth.out <- 600
-dpi.HQ <- 150
-dpi.LQ <- 120
+dpi.HQ <- 140
+dpi.LQ <- 110
 
 ## ----wine data, dpi=dpi.HQ, fig.width=7, fig.height=4, out.width = figwidth.out----
 library(speaq)

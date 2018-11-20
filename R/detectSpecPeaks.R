@@ -43,7 +43,7 @@ SNR.Th = -1, verbose = TRUE)
     for (i in 1:nSamp) {
         myPeakRes <- NULL
         mySpec <- X[i, ]
-        for (k in 1:length(nDivRange)) {
+        for (k in seq_along(nDivRange)) {
             divR <- nDivRange[k]
             for (j in 1:(trunc(nFea/divR) - 3)) {
                 startR <- (j - 1) * divR + 1
@@ -69,7 +69,6 @@ SNR.Th = -1, verbose = TRUE)
                     
                     if(!is.null(majorPeakInfo)){
                         if (length(majorPeakInfo$peakIndex) > 0) {
-                            print(paste("j =",j," peak =" , majorPeakInfo$peakIndex," savedpeak = ", (majorPeakInfo$peakIndex + startR - 1), sep = "" ))
                             myPeakRes <- c(myPeakRes, majorPeakInfo$peakIndex + startR - 1)
                         }
                     }

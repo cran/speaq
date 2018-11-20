@@ -2,7 +2,7 @@
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(tidy = TRUE)
 figwidth.out <- 600
-DPI.out <- 140
+DPI.out <- 120
 
 ## ----Read_data_input,fig.keep='none', tidy=FALSE, message=F, warning=F----
 library(speaq)
@@ -35,7 +35,7 @@ resFindRef<- findRef(peakList);
 refInd <- resFindRef$refInd;
 
 #The ranks of spectra
-for (i in 1:length(resFindRef$orderSpec))
+for (i in seq_along(resFindRef$orderSpec))
 {
     cat(paste(i, ":",resFindRef$orderSpec[i],sep=""), " ");
     if (i %% 10 == 0) cat("\n")
@@ -111,7 +111,7 @@ H0 = createNullSampling(Y, groupLabel, N = N,verbose=FALSE)
 #compute percentile of alpha
 perc = double(ncol(Y));
 alpha_corr = alpha/sum(returnLocalMaxima(Y[2,])$pkMax>50000);
-for (i in 1 : length(perc)){    
+for (i in seq_along(perc)){    
     perc[i] = quantile(H0[,i],1-alpha_corr, type = 3);
 }
 

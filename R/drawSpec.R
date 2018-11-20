@@ -6,7 +6,7 @@
 #' @param startP The starting point of the segment. If it is -1, the starting point is from beginning of the spectra.
 #' @param endP The ending point of the segment. If it is -1, the ending point is the last point of the spectra.
 #' @param groupLabel The default value is NULL, it means that a single spectrum has a distinct color. Otherwise, the spectra is colored by their label.
-#' @param useLog The default value is -1, that means do not use a logarit transformation. If users want to transform the intensities to logarit values before plotting, set it to 1.
+#' @param useLog The default value is -1, that means do not use a log transformation. If users want to transform the intensities to logarit values before plotting, set it to 1.
 #' @param highBound Default value is -1, that means the plot covers also the highest intensity peaks in the figure. If the users want to limit the upper height of the figure, set this parameter by the limited value.
 #' @param lowBound Default value is -1, that means the plot covers also the lowest intensity peaks in the figure. If the users want to limit the under height of the figure, set this parameter by the limited value.
 #' @param xlab The default value is NULL, if so, "index" is displayed at the horizontal axis.
@@ -41,14 +41,14 @@ drawSpec <-function(X, startP=-1, endP=-1, groupLabel=NULL, useLog=-1,
     colnames(X)=c(1:ncol(X));
     X=as.matrix(X);
     if (highBound!=-1){
-        for (i in 1:nrow(X)){
+        for (i in seq_len(nrow(X))){
             myIndex=which(X[i,]>highBound);
             X[i,myIndex]=highBound;
         }        
     }
     
     if (lowBound!=-1){
-        for (i in 1:nrow(X)){
+        for (i in seq_len(nrow(X))){
             myIndex=which(X[i,]<lowBound);
             X[i,myIndex]=lowBound;
         }        
@@ -83,9 +83,9 @@ drawSpec <-function(X, startP=-1, endP=-1, groupLabel=NULL, useLog=-1,
     xPos=c(0:nAxisPos) * tempVal; 
     axis(1,at=xPos,labels=xPos+startP+offside);
     
-    for(i in 1:length(levels(groupLabel))){
+    for(i in seq_along(levels(groupLabel))) {
         groupLabelIdx=which(groupLabel==levels(groupLabel)[i]);
-        for (j in 1:length(groupLabelIdx)){
+        for (j in seq_along(groupLabelIdx)){
             lines(yn[groupLabelIdx[j],],col=as.integer(levels(groupLabel)[i]))        
         }
     }

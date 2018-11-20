@@ -14,12 +14,12 @@ vignette: >
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(tidy = TRUE)
 figwidth.out <- 600
-DPI.out <- 140
+DPI.out <- 120
 ```
 
 ## Preface
 
-This introduction was written for the *speaq* package up until version 1.2.3. Since version 2.0 a lot of functionality is added but the original functionality is maintained. This vignette can therefor still be used as it decribes one part of the package dealing with spectral alignment and quantitation.
+This introduction was written for the *speaq* package up until version 1.2.3. Since version 2.0 a lot of functionality is added but the original functionality is maintained. This vignette can therefor still be used as it describes one part of the package dealing with spectral alignment and quantitation.
 
 
 
@@ -94,7 +94,7 @@ resFindRef<- findRef(peakList);
 refInd <- resFindRef$refInd;
 
 #The ranks of spectra
-for (i in 1:length(resFindRef$orderSpec))
+for (i in seq_along(resFindRef$orderSpec))
 {
     cat(paste(i, ":",resFindRef$orderSpec[i],sep=""), " ");
     if (i %% 10 == 0) cat("\n")
@@ -180,7 +180,7 @@ Yc <- dohClusterCustommedSegments(X,
 ## Spectral plots
 
 
-We could draw a segment to see the performance of the alignement.
+We could draw a segment to see the performance of the alignment.
 
 ```{r AlignedSpectral_plots, dpi=DPI.out, fig.width=6, fig.height=5, out.width = figwidth.out}
 drawSpec(Y);
@@ -224,7 +224,7 @@ H0 = createNullSampling(Y, groupLabel, N = N,verbose=FALSE)
 #compute percentile of alpha
 perc = double(ncol(Y));
 alpha_corr = alpha/sum(returnLocalMaxima(Y[2,])$pkMax>50000);
-for (i in 1 : length(perc)){    
+for (i in seq_along(perc)){    
     perc[i] = quantile(H0[,i],1-alpha_corr, type = 3);
 }
 ```
