@@ -135,8 +135,8 @@ speaq::ROIplot(Y.spec = Spectra.wine,
 
 wine.filled <- speaq::PeakFilling(Y.grouped = wine.regrouped, 
                                   Y.spec = Spectra.wine,  
-                                  max.index.shift = 200,
-                                  nCPU = 2) # nCPU set to 1 for the vignette build
+                                  max.index.shift = 50,
+                                  nCPU = 1) # nCPU set to 1 for the vignette build
 
 wine.Features <- speaq::BuildFeatureMatrix(wine.filled)
 
@@ -258,7 +258,7 @@ speaq::ROIplot(Y.spec = Spectra.wine,
 
 ## ----plot significant features, dpi=dpi.HQ, fig.width=7, fig.height=4, out.width = figwidth.out----
 
-peak_of_interest <- 5# change this number to any of the peaks you want to see
+peak_of_interest <- 4# change this number to any of the peaks you want to see
 drawSpecPPM(Y.spec = Spectra.wine[wine.color != "rose", ], 
             X.ppm = ppm.wine, 
             groupFactor = red.white.colors, 
