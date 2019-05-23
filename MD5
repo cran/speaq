@@ -1,6 +1,6 @@
-878ffbe6526cad39e761035b94827e87 *DESCRIPTION
+0ca1e1636b15ee06e62d28802b9d1c88 *DESCRIPTION
 1ee97794d78ec8854d22c1ff741402a1 *NAMESPACE
-c995c3252186edb8cb74977ad9aa22f8 *NEWS.md
+34b6c37414f549fa3b900b7ca12551c2 *NEWS.md
 63b06083e907a20638dfc4ddd3a4d649 *R/AddPlottingStuff.R
 b4725857a413ba995ae33326633f1e73 *R/BWR.R
 2ae06511403166f527fb387e4f63c453 *R/BuildFeatureMatrix.R
@@ -10,7 +10,7 @@ c60b6f3576cc06d013c4e5e27b7d9a49 *R/HMDBsearchR.R
 c7024bd892d8257d4927422b6dd4126a *R/PeakFilling.R
 0f3089d4cba1deaa22aa525d23519175 *R/PeakGrouper.R
 a9acddcc5e533bb4ba06e1778a5d0860 *R/ROIplot.R
-54f961a6c6ebe241ac077184d57d6083 *R/SCANT.R
+d36f134c580a01b551c8172a316b6040 *R/SCANT.R
 9e5d448aa4a7d4eaa627edfa82170b01 *R/SilhouetR.R
 9f5ebc6033530d266bc6bcbaa7461a06 *R/Winedata.R
 fa925dc287ad570c7e19a6d564bf7454 *R/createNullSampling.R
@@ -24,7 +24,7 @@ d4024b7667d307210200dc354ad617bc *R/drawSpec.R
 4685e2aad1491b5bb4060a93f12595c2 *R/findRef.R
 5091ddca9e3eef2c1c6a8c48c62cc7a0 *R/findSegPeakList.R
 4cc10c125bb0b99cb556bb8a06e9af97 *R/findShiftStepFFT.R
-0514166190c616dc639925264ce990c0 *R/getWaveletPeaks.R
+8054332560750cf72c4e53a3782e2524 *R/getWaveletPeaks.R
 4c5531d14916475fe3a432fae6ed0e53 *R/hClustAlign.R
 bd928ef357d4f8852fdfbf78c29afeb9 *R/hclust.grouping.R
 00a3bac8ba7f62c4ca680a53b7f42f45 *R/makeSimulatedData.R
@@ -36,10 +36,10 @@ bf5668dab40a4b612c11cff2e23021bc *data/Winedata.rda
 1787f0f5375847e9d64ad4303eea41cd *data/datalist
 2a0ffd1b4bba8494f5f79ebbf70fad89 *inst/doc/classic_speaq_vignette.R
 36974b2ba9a773d2fdd34799e0cbca91 *inst/doc/classic_speaq_vignette.Rmd
-a60df960846e3e07039c2b18b580c5b8 *inst/doc/classic_speaq_vignette.html
+a289a03ffd2439c99a3d1d8a9c653895 *inst/doc/classic_speaq_vignette.html
 5c462a11146036bcd4c1e23c6b1e93d1 *inst/doc/speaq2_illustrations.R
 fbdc5562b7baf74dd012f3e8f171c5f7 *inst/doc/speaq2_illustrations.Rmd
-3a4f3fc209828a5941a7b5a54e545e0e *inst/doc/speaq2_illustrations.html
+5c54da623ba06d9aee3b2fd877a7977f *inst/doc/speaq2_illustrations.html
 a782f3054e57112916e50315e971848b *man/AddPlottingStuff.Rd
 6bad064370aeac6e21dbc3e9ce1d511d *man/BWR.Rd
 9894724d3eb3c8cb77a39f94dcbb3fca *man/BuildFeatureMatrix.Rd
