@@ -1,10 +1,10 @@
-## ----setup, include=FALSE------------------------------------------------
+## ----setup, include=FALSE-----------------------------------------------------
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(tidy = TRUE)
 figwidth.out <- 600
 DPI.out <- 120
 
-## ----Read_data_input,fig.keep='none', tidy=FALSE, message=F, warning=F----
+## ----Read_data_input,fig.keep='none', tidy=FALSE, message=F, warning=F--------
 library(speaq)
 #Generate a simulated NMR data set for this experiment
 res=makeSimulatedData();
@@ -14,7 +14,7 @@ groupLabel=res$label;
 ## ----Unaligned_spectral_plots, dpi=DPI.out, fig.width=6, fig.height=5, out.width = figwidth.out----
 drawSpec(X);
 
-## ----Peak_detection------------------------------------------------------
+## ----Peak_detection-----------------------------------------------------------
 cat("\n detect peaks....");
 startTime <- proc.time();
 peakList <- detectSpecPeaks(X,
@@ -28,7 +28,7 @@ peakList <- detectSpecPeaks(X,
 endTime <- proc.time();
 cat("Peak detection time:",(endTime[3]-startTime[3])/60," minutes");
 
-## ----Reference_finding---------------------------------------------------
+## ----Reference_finding--------------------------------------------------------
 
 cat("\n Find the spectrum reference...")
 resFindRef<- findRef(peakList);
@@ -43,7 +43,7 @@ for (i in seq_along(resFindRef$orderSpec))
     
 cat("\n The reference is: ", refInd);
 
-## ----Spectral_alignment--------------------------------------------------
+## ----Spectral_alignment-------------------------------------------------------
 # Set maxShift
 maxShift = 50;
 
@@ -62,7 +62,7 @@ Y <- dohCluster(X,
                 acceptLostPeak = TRUE, verbose=TRUE);
 
 
-## ----table, echo=FALSE---------------------------------------------------
+## ----table, echo=FALSE--------------------------------------------------------
 library(knitr)
 
 nghiaTable = matrix(c(c(100, 200, 0, 0, 0),c(450, 680, 1, 0, 50)), nrow = 2, byrow = T)
@@ -70,7 +70,7 @@ colnames(nghiaTable) = c("begin" , "end" , "forAlign" , "ref" , "maxShift")
 
 kable(nghiaTable)
 
-## ----Spectral_segment_alignment------------------------------------------
+## ----Spectral_segment_alignment-----------------------------------------------
 segmentInfoMat=matrix(data=c(100,200,0,0,0,
                       450,680,1,0,50),nrow=2,ncol=5,byrow=TRUE
                       )
@@ -98,7 +98,7 @@ drawSpec(Y,
 ## ----Aligned_spectral_plots_customized, dpi=DPI.out, fig.width=6, fig.height=5, out.width = figwidth.out----
 drawSpec(Yc);
 
-## ----Quantitative_analysis-----------------------------------------------
+## ----Quantitative_analysis----------------------------------------------------
 N = 100;
 alpha = 0.05;
 

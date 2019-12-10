@@ -1,4 +1,4 @@
-## ----setup, include=FALSE------------------------------------------------
+## ----setup, include=FALSE-----------------------------------------------------
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_chunk$set(tidy = FALSE)
 figwidth.out <- 600
@@ -33,7 +33,7 @@ speaq::drawSpecPPM(Y.spec = Spectra.wine,
                    roiWidth.ppm = 0.15,
                    legendpos = "topright" )
 
-## ----detect winepeaks,  results = "hide"---------------------------------
+## ----detect winepeaks,  results = "hide"--------------------------------------
 wine.peaks <- speaq::getWaveletPeaks(Y.spec=Spectra.wine, 
                                      X.ppm=ppm.wine, 
                                      baselineThresh = 10,
@@ -72,7 +72,7 @@ Silh_plot
 
 
 
-## ----average silhouette, tidy = TRUE-------------------------------------
+## ----average silhouette, tidy = TRUE------------------------------------------
 groups <- unique(SilhouetteValues$GroupIndices)
 Ngroups <- length(groups)
 sil_means <- matrix(NA, ncol = 3, nrow = Ngroups)
@@ -103,7 +103,7 @@ speaq::ROIplot(Y.spec = Spectra.wine,
                groupLabels = as.factor(wine.color))
 
 
-## ----regroup-------------------------------------------------------------
+## ----regroup------------------------------------------------------------------
 wrong.groups <- sort(sil_means[sil_means[,1]>=sil_means[1,1],1])[1:2]
 
 wine.regrouped <- speaq::regroupR(grouped.peaks = wine.grouped,
@@ -131,7 +131,7 @@ speaq::ROIplot(Y.spec = Spectra.wine,
 
 
 
-## ----data matrix, results = "hide", message=FALSE------------------------
+## ----data matrix, results = "hide", message=FALSE-----------------------------
 
 wine.filled <- speaq::PeakFilling(Y.grouped = wine.regrouped, 
                                   Y.spec = Spectra.wine,  
@@ -141,12 +141,12 @@ wine.filled <- speaq::PeakFilling(Y.grouped = wine.regrouped,
 wine.Features <- speaq::BuildFeatureMatrix(wine.filled)
 
 
-## ----scaling-------------------------------------------------------------
+## ----scaling------------------------------------------------------------------
 wine.Features.scaled <- speaq::SCANT(data.matrix = wine.Features, 
                                      type = c("pareto", "center"))  
 
 
-## ----PCA, dpi=dpi.LQ, fig.width=7, fig.height=5, out.width = 500---------
+## ----PCA, dpi=dpi.LQ, fig.width=7, fig.height=5, out.width = 500--------------
 
 
 common.pca <- prcomp(wine.Features.scaled) 
@@ -185,14 +185,14 @@ legend("topleft",
 
 
 
-## ----no rose-------------------------------------------------------------
+## ----no rose------------------------------------------------------------------
 red.white.scaled <- speaq::SCANT(wine.Features[wine.color!="rose",], 
                                  type = c("pareto", "center"))  
 
 red.white.colors <- as.factor(as.character(wine.color)[wine.color!="rose"])
 
 
-## ----relevant peaks------------------------------------------------------
+## ----relevant peaks-----------------------------------------------------------
 p.all_bonf <- speaq::relevant.features.p(datamatrix = red.white.scaled,
                                          responsevector = red.white.colors, 
                                          p.adj = "bonferroni")
